@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642774363823",
+    "project_id": "easytrip-fedc9",
+    "storage_bucket": "easytrip-fedc9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642774363823:android:853bd5b50cf4ad1fd92e5a",
+        "android_client_info": {
+          "package_name": "com.example.easy_trip_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7VYF1RTGcT7ET39Bc51Rbf_axCjGGJmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
