@@ -9,13 +9,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List<String> MOT=["Flight","Train","Bus","Cab"];
-  final List<FaIcon> ICONS=[
+  final List<String> MOT = ["Flight", "Train", "Bus", "Cab"];
+  final List<FaIcon> ICONS = [
     FaIcon(FontAwesomeIcons.plane),
     FaIcon(FontAwesomeIcons.train),
     FaIcon(FontAwesomeIcons.bus),
     FaIcon(FontAwesomeIcons.taxi),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,9 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         ICONS[index],
-                        SizedBox(height: 20,),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Text(
                           MOT[index],
                           style: TextStyle(color: Colors.black, fontSize: 20),

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_trip_admin/controller/login_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,12 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   var email = TextEditingController();
   var pass = TextEditingController();
-
+  void adddata()async{
+    FirebaseFirestore.instance.collection("Users").add({
+      "Email":email.text.trim().toString(),
+      "Password":pass.text.trim().toString(),
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +42,7 @@ class _LoginState extends State<Login> {
               controller: email,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
+
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
@@ -78,14 +85,15 @@ class _LoginState extends State<Login> {
                 height: (MediaQuery.sizeOf(context).height) * 0.05,
                 child: ElevatedButton(
                     onPressed: () async {
-                      final lc = Login_Controller();
-                      if (await lc.signIn(email.text.trim().toString(),
-                          pass.text.trim().toString())) {
-                        Navigator.pushReplacementNamed(context, "/home");
-                      } else {
-                        print("Not Navigate");
-                      }
-                    },
+                      adddata();
+                        final lc = Login_Controller();
+                        if (await lc.signIn(email.text.trim().toString(),
+                            pass.text.trim().toString())) {
+                          Navigator.pushReplacementNamed(context, "/home");
+                        } else {
+                          print("Not Navigate");
+                        }
+                      },
                     child: Text("Login"))),
           ],
         ),
